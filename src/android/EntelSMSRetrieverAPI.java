@@ -1,12 +1,8 @@
 package cl.entel.cordova;
 
-import static by.chemerisuk.cordova.support.ExecutionThread.WORKER;
-
 import android.util.Log;
-
 import org.apache.cordova.CallbackContext;
 import org.apache.cordova.CordovaArgs;
-
 import by.chemerisuk.cordova.support.CordovaMethod;
 import by.chemerisuk.cordova.support.ReflectiveCordovaPlugin;
 
@@ -31,9 +27,33 @@ public class EntelSMSRetrieverAPI extends ReflectiveCordovaPlugin {
         }
     }
 
-    @CordovaMethod(WORKER)
-    public void onSMSReceived(CallbackContext callbackContext) {
-        Log.d(TAG, "onSMSReceived");
+    @CordovaMethod
+    public void startSMSListener(CallbackContext callbackContext) {
+        Log.d(TAG, "startSMSListener");
         EntelSMSRetrieverCallbackHelper.setCallbackContext(callbackContext);
     }
+
+    @CordovaMethod
+    public void stopSMSListener(CallbackContext callbackContext) {
+        Log.d(TAG, "stopSMSListener");
+        EntelSMSRetrieverCallbackHelper.clearCallbackContext();
+    }
+
+//    @CordovaMethod(WORKER)
+//    public  void requestHint(CordovaArgs args, CallbackContext callbackContext) {
+//        Log.d(TAG, "requestHint");
+//        try {
+//            HintRequest hintRequest = new HintRequest.Builder()
+//                    .setPhoneNumberIdentifierSupported(true)
+//                    .build();
+//
+//            PendingIntent intent = Auth.CredentialsApi.getHintPickerIntent(
+//                    apiClient, hintRequest);
+//            startIntentSenderForResult(intent.getIntentSender(),
+//                    RESOLVE_HINT, null, 0, 0, 0);
+//        } catch (Exception ex) {
+//            Log.e(TAG, ex.toString());
+//            callbackContext.error(ex.getMessage());
+//        }
+//    }
 }

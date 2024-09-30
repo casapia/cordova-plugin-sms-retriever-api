@@ -40,7 +40,11 @@
         <framework src="com.google.android.gms:play-services-auth:21.2.0" />
         <framework src="com.google.android.gms:play-services-auth-api-phone:18.1.0" />
 
+        <source-file src="src/android/EntelSMSBroadcastReceiver.java"
+            target-dir="src/cl/entel/cordova" />
         <source-file src="src/android/EntelSMSRetrieverAPI.java"
+            target-dir="src/cl/entel/cordova" />
+        <source-file src="src/android/EntelSMSRetrieverCallbackHelper.java"
             target-dir="src/cl/entel/cordova" />
     </platform>
 </plugin>
