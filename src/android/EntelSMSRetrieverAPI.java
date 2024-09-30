@@ -51,6 +51,8 @@ public class EntelSMSRetrieverAPI extends ReflectiveCordovaPlugin {
         Task<Void> task = client.startSmsRetriever();
         task.addOnSuccessListener(aVoid -> Log.d(TAG, "startSmsRetriever onSuccess"));
         task.addOnFailureListener(e -> Log.w(TAG, "startSmsRetriever onFailure", e));
+        task.addOnCompleteListener(task1 -> Log.d(TAG, "startSmsRetriever onComplete"));
+        task.addOnCanceledListener(() -> Log.d(TAG, "startSmsRetriever onCanceled"));
         callbackContext.success();
     }
 
