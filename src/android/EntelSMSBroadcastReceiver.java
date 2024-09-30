@@ -18,6 +18,7 @@ public class EntelSMSBroadcastReceiver extends BroadcastReceiver {
 
     @Override
     public void onReceive(Context context, Intent intent) {
+        Log.d(TAG, "onReceive");
         CallbackContext callbackContext = EntelSMSRetrieverCallbackHelper.getCallbackContext();
         if (callbackContext == null) {
             Log.w(TAG, "onReceive: callbackContext is null");
