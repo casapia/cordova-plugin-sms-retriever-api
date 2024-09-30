@@ -4,12 +4,8 @@ import static by.chemerisuk.cordova.support.ExecutionThread.WORKER;
 
 import android.util.Log;
 
-import androidx.annotation.NonNull;
-
 import com.google.android.gms.auth.api.phone.SmsRetriever;
 import com.google.android.gms.auth.api.phone.SmsRetrieverClient;
-import com.google.android.gms.tasks.OnFailureListener;
-import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 
 import org.apache.cordova.CallbackContext;
