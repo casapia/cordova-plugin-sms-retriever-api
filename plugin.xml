@@ -1,0 +1,46 @@
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    id="cordova-plugin-sms-retriever-api"
+    version="1.0.0">
+
+    <name>SMS Retriever API</name>
+    <description></description>
+    <license>MIT</license>
+    <keywords>cordova, android</keywords>
+    <repo>https://bitbucket.org/appentel_cl/cordova-plugin-sms-retriever-api</repo>
+
+    <engines>
+        <engine name="cordova" version=">=11.0.0" />
+        <engine name="cordova-android" version=">=11.0.0" />
+        <engine name="cordova-ios" version=">=6.0.0" />
+    </engines>
+
+    <platform name="android">
+        <js-module src="www/ntl-sms-retriever-api.js" name="EntelSMSRetrieverAPI">
+            <merges target="cordova.plugins.EntelSMSRetrieverAPI" />
+        </js-module>
+
+        <config-file target="res/xml/config.xml" parent="/*">
+            <feature name="EntelSMSRetrieverAPI">
+                <param name="android-package"
+                    value="cl.entel.cordova.EntelSMSRetrieverAPI" />
+                <param name="onload" value="true" />
+            </feature>
+        </config-file>
+
+        <receiver android:name=".EntelSMSBroadcastReceiver" android:exported="true"
+            android:permission="com.google.android.gms.auth.api.phone.permission.SEND">
+            <intent-filter>
+                <action android:name="com.google.android.gms.auth.api.phone.SMS_RETRIEVED" />
+            </intent-filter>
+        </receiver>
+
+        <dependency id="cordova-support-android-plugin" version="~2.0.4" />
+        <framework src="src/android/build.gradle" custom="true" type="gradleReference" />
+        <framework src="com.google.android.gms:play-services-auth:21.2.0" />
+        <framework src="com.google.android.gms:play-services-auth-api-phone:18.1.0" />
+
+        <source-file src="src/android/EntelSMSRetrieverAPI.java"
+            target-dir="src/cl/entel/cordova" />
+    </platform>
+</plugin>

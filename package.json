@@ -1,0 +1,17 @@
+{
+  "name": "cordova-plugin-sms-retriever-api",
+  "version": "1.0.0",
+  "description": "",
+  "cordova": {
+    "id": "cordova-plugin-sms-retriever-api",
+    "platforms": [
+      "android"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://bitbucket.org/appentel_cl/cordova-plugin-sms-retriever-api"
+  },
+  "author": "Entel, Angel Casapía",
+  "license": "MIT"
+}
