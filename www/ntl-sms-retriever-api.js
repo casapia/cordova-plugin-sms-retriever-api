@@ -22,9 +22,3 @@ exports.stopSMSListener = function (text) {
     exec(resolve, reject, PLUGIN_NAME, "stopSMSListener", [text]);
   });
 };
-
-exports.getAppSignatures = function (text) {
-  return new Promise(function (resolve, reject) {
-    exec(resolve, reject, PLUGIN_NAME, "getAppSignatures", [text]);
-  });
-};

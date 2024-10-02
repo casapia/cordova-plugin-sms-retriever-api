@@ -50,7 +50,5 @@
             target-dir="src/cl/entel/cordova" />
         <source-file src="src/android/EntelSMSRetrieverCallbackHelper.java"
             target-dir="src/cl/entel/cordova" />
-        <source-file src="src/android/EntelSMSAppSignatureHelper.java"
-            target-dir="src/cl/entel/cordova" />
     </platform>
 </plugin>
